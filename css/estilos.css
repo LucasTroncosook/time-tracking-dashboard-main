@@ -1,0 +1,518 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    /* Primary */
+    --Blue: hsl(246, 80%, 60%);
+    --Light-red-work: hsl(15, 100%, 70%);
+    --Soft-blue-play: hsl(195, 74%, 62%);
+    --Light-red-study: hsl(348, 100%, 68%);
+    --Lime-green-exercise: hsl(145, 58%, 55%);
+    --Violet-social: hsl(264, 64%, 52%);
+    --Soft-orange-self-care: hsl(43, 84%, 65%);
+
+    /* Neutral */
+    --Very-dark-blue: hsl(226, 43%, 10%);
+    --Dark-blue: hsl(235, 46%, 20%);
+    --Desaturated-blue: hsl(235, 45%, 61%);
+    --Pale-Blue: hsl(236, 100%, 87%);
+    --White: hsl(0, 0%, 100%);
+
+    /* Font Size */
+    --Rubik:'Rubik'
+}
+
+body{
+    width: 100%;
+    height: 100vh;
+    background-color: var(--Very-dark-blue);
+    font-family: var(--Rubik);
+    display: grid;
+    place-items: center;
+}
+
+.container{
+    width: 100%;
+    max-width: 950px;
+    min-width: 320px;
+    height: 450px;
+    display: flex;
+    gap: 15px;
+    border-radius: 15px;
+    & .principal-card{
+        height: 100%;
+        width: 300px;
+        border-radius: inherit;
+        position: relative;
+        z-index: 10;
+        & .card-article{
+            background-color: var(--Blue);
+            height: 70%;
+            width: 100%;
+            border-radius: inherit;
+            position: absolute;
+            z-index: 20;
+            & .card-container{
+                width: 90%;
+                margin: 0 auto;
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+                gap: 25px;
+                & .figure-article{
+                    width: 70px;
+                    height: 70px;
+                    margin-top: 40px;
+                    & img{
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                        background-color: var(--White);
+                        padding: 3px;
+                        border-radius: 100%;
+                    }
+                }
+            & .section-text{
+                display: flex;
+                flex-direction: column;
+                & span{
+                    font-size: 14px;
+                    font-weight: 400;
+                    color: var(--Pale-Blue);
+                }
+                & h1{
+                    font-size: 40px;
+                    color: var(--White);
+                    font-weight: 200;
+                }
+            }    
+            }
+        }
+        & .inputs{
+            width: 100%;
+            height: 35%;
+            background-color: var(--Dark-blue);
+            border-radius: inherit;
+            position: absolute;
+            bottom: 0;
+            z-index: 5;
+            & .container-inputs{
+                width: 90%;
+                margin: 0 auto;
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                gap: 10px;
+                & a{
+                    text-decoration: none;
+                    font-size: 16px;
+                    color: var(--Pale-Blue);
+                    font-weight: 400;
+                    transition: color .1s ease-in-out;
+                    &:hover{
+                        color: var(--White);
+                    }
+                    }
+                & .active{
+                    color: var(--White);
+                }
+                }
+            }
+    }
+    & .json-card{
+        height: 100%;
+        width: 100%;
+        display: grid;
+        gap: 15px;
+        grid-template-columns: 3, repeat(1fr);
+        grid-template-rows: 2, repeat(1fr);
+        grid-template-areas: 
+        "card1 card2 card3"
+        "card4 card5 card6";
+        border-radius: inherit;
+        & article{
+            border-radius: inherit;
+            position: relative;
+            & section{
+                position: absolute;
+                width: 100%;
+                height: 82%;
+                z-index: 10;
+                background-color: var(--Dark-blue);
+                bottom: -1.5px;
+                border-radius: inherit;
+                transition: background-color .1s ease;
+                cursor: pointer;
+                &:hover{
+                    background-color: var(--Desaturated-blue);
+                    & .card-header{
+                        background-color: var(--Desaturated-blue);
+                    }
+                    & .card-main{
+                        background-color: var(--Desaturated-blue);
+                    }
+                    & .card-footer{
+                        background-color: var(--Desaturated-blue);
+                    }
+                }
+                & > .card-container{
+                    width: 100%;
+                    height: 101%;
+                    overflow: hidden;
+                    display: grid;
+                    grid-template-areas: 
+                    "card-header"
+                    "card-main"
+                    "card-footer";
+                    gap: 5px;
+                    & .card-header{
+                        grid-area: card-header;
+                        display: flex;
+                        justify-content: space-between;
+                        width: 90%;
+                        margin: 0 10px;
+                        height: 100%;
+                        align-items: center;
+                        & span{
+                            color: var(--White);
+                            font-weight: 500;
+                            font-size: 14px;
+                        }
+                        & a{
+                            display: flex;
+                            &:hover path{
+                                fill:var(--White);
+                            }
+                        }
+                    }
+                    & .card-main{
+                        grid-area: card-main;
+                        height: 100%;
+                        width: 90%;
+                        margin: 0 10px;
+                        display: flex;
+                        align-items: center;
+                        & h1{
+                            font-size: 54px;
+                            color: var(--White);
+                            font-weight: 300;
+                        }
+                    }
+                    & .card-footer{
+                        grid-area: card-footer;
+                        width: 90%;
+                        margin: 0 10px;
+                        height: 100%;
+                        & span{
+                            color: var(--Pale-Blue);
+                            font-weight: 500;
+                            font-size: 14px;
+                        }
+                    }
+                }
+            }
+        }
+        & .card1{
+            grid-area: card2;
+            background-image: url('../images/icon-play.svg');
+            width: 100%;
+            height: 100%;
+            background-repeat: no-repeat;
+            background-position: top right;
+            background-color: var(--Soft-blue-play);
+        }
+        & .card2{
+            grid-area: card3;
+            background-image: url('../images/icon-study.svg');
+            width: 100%;
+            height: 100%;
+            background-repeat: no-repeat;
+            background-position: top right;
+            background-color: var(--Light-red-study);
+        }
+        & .card3{
+            grid-area: card4;
+            background-image: url('../images/icon-exercise.svg');
+            width: 100%;
+            height: 100%;
+            background-repeat: no-repeat;
+            background-position: top right;
+            background-color: var(--Lime-green-exercise);
+        }
+        & .card4{
+            grid-area: card5;
+            background-image: url('../images/icon-social.svg');
+            width: 100%;
+            height: 100%;
+            background-repeat: no-repeat;
+            background-position: top right;
+            background-color: var(--Violet-social);
+        }
+        & .card5{
+            grid-area: card6;
+            background-image: url('../images/icon-self-care.svg');
+            width: 100%;
+            height: 100%;
+            background-repeat: no-repeat;
+            background-position: top right;
+            background-color: var(--Soft-orange-self-care);
+        }
+        & .card0{
+            grid-area: card1;
+            background-image: url('../images/icon-work.svg');
+            width: 100%;
+            height: 100%;
+            background-repeat: no-repeat;
+            background-position: top right;
+            background-color: var(--Light-red-work);
+        }
+    }
+
+@media(width <= 760px){
+        &{
+            flex-direction: column;
+            border: 1px solid #000;
+            height: 100%;
+            & .principal-card{
+                width: 100%;
+                height: 30%;
+                & .card-article{
+                    & .card-container{
+                        flex-direction: row;
+                        align-items: center;
+                        justify-content: center;
+                        gap: 10px;
+                        & .figure-article{
+                            margin: 0;
+                        }
+                    }
+                }
+                & .inputs{
+                    & .container-inputs{
+                        flex-direction: row;
+                        gap: 35px;
+                        align-items: center;
+                    }
+                }
+            }
+            & .json-card{
+                & article{
+                    & section{
+                        & > .card-container{
+                            & .card-header{
+                                & span{
+                                    font-size: 12px;
+                                }
+                            }
+                            & .card-main{
+                                & h1{
+                                    font-size: 42px;
+                                }
+                            }
+                            & .card-footer{
+                                & span{
+                                    font-size: 11px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+}
+
+
+@media(width <= 500px){
+    &{
+        & .principal-card{
+            height: 20%;
+            & .card-article{
+                & .card-container{
+                    & .figure-article{
+                        width: 50px;
+                        height: 50px;
+                    }
+                & .section-text{
+                    display: flex;
+                    flex-direction: column;
+                    & span{
+                        font-size: 14px;
+                    }
+                    & h1{
+                        font-size: 28px;
+                    }
+                }    
+                }
+            }
+            & .inputs{
+                & .container-inputs{
+                    & a{
+                        font-size: 14px;
+                        }
+                    }
+                }
+        }
+        & .json-card{
+            height: 100%;
+            width: 100%;
+            display: grid;
+            gap: 15px;
+            margin-bottom: 15px;
+            grid-template-columns: 6, repeat(1fr);
+            grid-template-rows: 1, repeat(1fr);
+            grid-template-areas: 
+            "card1"
+            "card2"
+            "card3"
+            "card4"
+            "card5"
+            "card6";
+            border-radius: inherit;
+            & article{
+                border-radius: inherit;
+                position: relative;
+                & section{
+                    position: absolute;
+                    width: 100%;
+                    height: 82%;
+                    z-index: 10;
+                    background-color: var(--Dark-blue);
+                    bottom: -1.5px;
+                    border-radius: inherit;
+                    transition: background-color .1s ease;
+                    cursor: pointer;
+                    &:hover{
+                        background-color: var(--Desaturated-blue);
+                        & .card-header{
+                            background-color: var(--Desaturated-blue);
+                        }
+                        & .card-main{
+                            background-color: var(--Desaturated-blue);
+                        }
+                        & .card-footer{
+                            background-color: var(--Desaturated-blue);
+                        }
+                    }
+                    & > .card-container{
+                        width: 100%;
+                        height: 101%;
+                        overflow: hidden;
+                        display: grid;
+                        grid-template-areas: 
+                        "card-header card-header"
+                        "card-main card-footer";
+                        gap: 15px;
+                        & .card-header{
+                            grid-area: card-header;
+                            display: flex;
+                            justify-content: space-between;
+                            width: 90%;
+                            margin: 0 10px;
+                            height: 100%;
+                            align-items: center;
+                            padding-block: 5px;
+                            & span{
+                                color: var(--White);
+                                font-weight: 500;
+                                font-size: 10px;
+                            }
+                            & a{
+                                display: flex;
+                                &:hover path{
+                                    fill:var(--White);
+                                }
+                            }
+                        }
+                        & .card-main{
+                            grid-area: card-main;
+                            height: 100%;
+                            width: 90%;
+                            margin: 0 10px;
+                            display: flex;
+                            align-items: center;
+                            padding-bottom: 15px;
+                            & h1{
+                                font-size: 38px;
+                                color: var(--White);
+                                font-weight: 300;
+                            }
+                        }
+                        & .card-footer{
+                            grid-area: card-footer;
+                            width: 90%;
+                            margin: 0 10px;
+                            height: 100%;
+                            padding-bottom: 15px;
+                            & span{
+                                color: var(--Pale-Blue);
+                                font-weight: 500;
+                                font-size: 12px;
+                            }
+                        }
+                    }
+                }
+            }
+            & .card1{
+                grid-area: card2;
+                background-image: url('../images/icon-play.svg');
+                width: 100%;
+                height: 100%;
+                background-repeat: no-repeat;
+                background-position: top right;
+                background-color: var(--Soft-blue-play);
+            }
+            & .card2{
+                grid-area: card3;
+                background-image: url('../images/icon-study.svg');
+                width: 100%;
+                height: 100%;
+                background-repeat: no-repeat;
+                background-position: top right;
+                background-color: var(--Light-red-study);
+            }
+            & .card3{
+                grid-area: card4;
+                background-image: url('../images/icon-exercise.svg');
+                width: 100%;
+                height: 100%;
+                background-repeat: no-repeat;
+                background-position: top right;
+                background-color: var(--Lime-green-exercise);
+            }
+            & .card4{
+                grid-area: card5;
+                background-image: url('../images/icon-social.svg');
+                width: 100%;
+                height: 100%;
+                background-repeat: no-repeat;
+                background-position: top right;
+                background-color: var(--Violet-social);
+            }
+            & .card5{
+                grid-area: card6;
+                background-image: url('../images/icon-self-care.svg');
+                width: 100%;
+                height: 100%;
+                background-repeat: no-repeat;
+                background-position: top right;
+                background-color: var(--Soft-orange-self-care);
+            }
+            & .card0{
+                grid-area: card1;
+                background-image: url('../images/icon-work.svg');
+                width: 100%;
+                height: 100%;
+                background-repeat: no-repeat;
+                background-position: top right;
+                background-color: var(--Light-red-work);
+            }
+        }
+    }
+}
+}
